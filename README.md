@@ -1,114 +1,114 @@
-# Python Template
+# Python 项目模板
 
-A highly engineered Python project template with strict quality controls and automated CI/CD.
+一个高度工程化的 Python 项目模板，具备严格的质量控制和自动化 CI/CD 流程。
 
-[![CI](https://github.com/yourusername/python-template/workflows/CI/badge.svg)](https://github.com/yourusername/python-template/actions)
-[![codecov](https://codecov.io/gh/yourusername/python-template/branch/main/graph/badge.svg)](https://codecov.io/gh/yourusername/python-template)
+[![CI](https://github.com/ZacharyZcR/Python-Template/workflows/CI/badge.svg)](https://github.com/ZacharyZcR/Python-Template/actions)
+[![codecov](https://codecov.io/gh/ZacharyZcR/Python-Template/branch/main/graph/badge.svg)](https://codecov.io/gh/ZacharyZcR/Python-Template)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 
-## Features
+## 特性
 
-**Quality Control:**
-- 🚀 **Ruff** - Lightning-fast linting and formatting (replaces Black, Flake8, isort)
-- 🔍 **Mypy** - Static type checking
-- 📊 **Pytest** - Testing framework with 80%+ coverage requirement
-- 📝 **Interrogate** - Docstring coverage enforcement (80%+)
-- 🔬 **Radon** - Code complexity analysis
-- 🎯 **Pre-commit hooks** - Automatic quality checks before commit
+**质量控制：**
+- 🚀 **Ruff** - 极快的代码检查和格式化工具（替代 Black、Flake8、isort）
+- 🔍 **Mypy** - 静态类型检查
+- 📊 **Pytest** - 测试框架，要求 80%+ 覆盖率
+- 📝 **Interrogate** - 文档字符串覆盖率强制检查（80%+）
+- 🔬 **Radon** - 代码复杂度分析
+- 🎯 **Pre-commit hooks** - 提交前自动质量检查
 
-**CI/CD:**
-- ✅ GitHub Actions for automated testing across Python 3.9-3.12
-- 🔄 Automated dependency updates via Dependabot
-- 📦 Automated releases to PyPI
-- 📈 Code coverage reporting to Codecov
+**CI/CD：**
+- ✅ GitHub Actions 自动化测试（支持 Python 3.9-3.12）
+- 🔄 Dependabot 自动依赖更新
+- 📦 自动发布到 PyPI
+- 📈 代码覆盖率报告（Codecov）
 
-**Developer Experience:**
-- 📋 Makefile with common commands
-- 🎨 Modern `pyproject.toml` configuration
-- 📚 Example code with best practices
-- 🔧 VS Code and PyCharm compatible
+**开发体验：**
+- 📋 Makefile 提供常用命令
+- 🎨 现代化的 `pyproject.toml` 配置
+- 📚 最佳实践示例代码
+- 🔧 兼容 VS Code 和 PyCharm
 
-## Quick Start
+## 快速开始
 
-### Use as Template
+### 使用本模板
 
-1. Click "Use this template" on GitHub
-2. Clone your new repository
-3. Update project metadata in `pyproject.toml`
-4. Install dependencies:
+1. 在 GitHub 上点击 "Use this template"
+2. 克隆你的新仓库
+3. 更新 `pyproject.toml` 中的项目元数据
+4. 安装依赖：
 
 ```bash
 make install-dev
 ```
 
-### Project Structure
+### 项目结构
 
 ```
 python-template/
-├── src/                    # Source code
-│   ├── core/              # Core functionality
-│   └── utils/             # Utility functions
-├── tests/                 # Tests
-│   ├── unit/             # Unit tests
-│   └── integration/      # Integration tests
+├── src/                    # 源代码
+│   ├── core/              # 核心功能
+│   └── utils/             # 工具函数
+├── tests/                 # 测试
+│   ├── unit/             # 单元测试
+│   └── integration/      # 集成测试
 ├── .github/
-│   └── workflows/        # CI/CD pipelines
-├── pyproject.toml        # Project configuration
+│   └── workflows/        # CI/CD 流程
+├── pyproject.toml        # 项目配置
 ├── .pre-commit-config.yaml
-├── Makefile              # Common commands
+├── Makefile              # 常用命令
 └── README.md
 ```
 
-## Development
+## 开发指南
 
-### Setup
+### 环境设置
 
 ```bash
-# Create virtual environment
+# 创建虚拟环境
 python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+source .venv/bin/activate  # Windows 用户: .venv\Scripts\activate
 
-# Install with development dependencies
+# 安装开发依赖
 make install-dev
 ```
 
-### Common Commands
+### 常用命令
 
 ```bash
-make help              # Show all available commands
-make test              # Run tests with coverage
-make lint              # Check code quality
-make format            # Auto-format code
-make quality           # Run all quality checks
-make clean             # Clean build artifacts
+make help              # 显示所有可用命令
+make test              # 运行测试（含覆盖率）
+make lint              # 代码质量检查
+make format            # 自动格式化代码
+make quality           # 运行所有质量检查
+make clean             # 清理构建产物
 ```
 
-### Quality Standards
+### 质量标准
 
-This template enforces strict quality standards:
+本模板强制执行严格的质量标准：
 
-| Check | Tool | Standard |
+| 检查项 | 工具 | 标准 |
 |-------|------|----------|
-| Code Style | Ruff | PEP 8 compliant, 100 chars/line |
-| Type Hints | Mypy | Required for all functions |
-| Test Coverage | Pytest | ≥ 80% |
-| Docstring Coverage | Interrogate | ≥ 80% |
-| Complexity | Radon | Cyclomatic ≤ 10 (B grade) |
+| 代码风格 | Ruff | 符合 PEP 8，100 字符/行 |
+| 类型注解 | Mypy | 所有函数必需 |
+| 测试覆盖率 | Pytest | ≥ 80% |
+| 文档覆盖率 | Interrogate | ≥ 80% |
+| 复杂度 | Radon | 循环复杂度 ≤ 10 (B 级) |
 
 ### Pre-commit Hooks
 
-Hooks run automatically on `git commit`:
+Hooks 会在 `git commit` 时自动运行：
 
 ```bash
-# Manual run on all files
+# 手动运行所有文件检查
 make pre-commit
 
-# Update hook versions
+# 更新 hook 版本
 pre-commit autoupdate
 ```
 
-### Writing Tests
+### 编写测试
 
 ```python
 # tests/unit/test_example.py
@@ -116,134 +116,136 @@ import pytest
 from src.core.calculator import Calculator
 
 def test_addition() -> None:
-    """Test that addition works correctly."""
+    """测试加法功能是否正常工作。"""
     assert Calculator.add(2, 3) == 5
 ```
 
-Run tests:
+运行测试：
 ```bash
-make test              # With coverage
-make test-fast         # Without coverage
+make test              # 含覆盖率
+make test-fast         # 不含覆盖率
 ```
 
 ## CI/CD
 
-### Continuous Integration
+### 持续集成
 
-On every push and PR:
-- ✅ Code quality checks (lint, format, type)
-- ✅ Tests across Python 3.9-3.12
-- ✅ Coverage reporting
-- ✅ Build verification
+每次 push 和 PR 时会运行：
+- ✅ 代码质量检查（lint、format、type）
+- ✅ 多版本测试（Python 3.9-3.12）
+- ✅ 覆盖率报告
+- ✅ 构建验证
 
-### Releases
+### 发布流程
 
-Automatic release on version tags:
+创建版本标签时自动发布：
 
 ```bash
-# Create and push a tag
+# 创建并推送标签
 git tag v1.0.0
 git push origin v1.0.0
 ```
 
-This triggers:
-1. Build distribution packages
-2. Create GitHub release
-3. Publish to PyPI (requires `PYPI_API_TOKEN` secret)
+触发流程：
+1. 构建发布包
+2. 创建 GitHub Release
+3. 发布到 PyPI（需配置 `PYPI_API_TOKEN` secret）
 
-## Configuration
+## 配置说明
 
 ### pyproject.toml
 
-All tools configured in one place:
-- Project metadata
-- Dependencies
-- Ruff settings
-- Mypy settings
-- Pytest settings
-- Coverage settings
-- Interrogate settings
+所有工具配置集中在一个文件：
+- 项目元数据
+- 依赖管理
+- Ruff 配置
+- Mypy 配置
+- Pytest 配置
+- Coverage 配置
+- Interrogate 配置
 
-### Customization
+### 自定义配置
 
-Adjust quality thresholds in `pyproject.toml`:
+在 `pyproject.toml` 中调整质量阈值：
 
 ```toml
-# Example: Lower coverage requirement
+# 示例：降低覆盖率要求
 [tool.pytest.ini_options]
 addopts = ["--cov-fail-under=70"]
 
-# Example: Adjust line length
+# 示例：调整行长度
 [tool.ruff]
 line-length = 120
 ```
 
-## Tools Explained
+## 工具说明
 
-### Why Ruff?
+### 为什么选择 Ruff？
 
-Ruff is 10-100x faster than traditional Python linters:
-- **Replaces**: Black (formatting) + Flake8 (linting) + isort (imports)
-- **Written in**: Rust (blazingly fast)
-- **Benefit**: One tool, one config, instant feedback
+Ruff 比传统 Python linter 快 10-100 倍：
+- **替代**：Black（格式化）+ Flake8（检查）+ isort（导入排序）
+- **实现语言**：Rust（性能极快）
+- **优势**：一个工具，一份配置，即时反馈
 
-### Why These Coverage Thresholds?
+### 为什么这些覆盖率阈值？
 
-- **80% code coverage**: Catches most bugs without diminishing returns
-- **80% docstring coverage**: Ensures public APIs are documented
-- **Complexity ≤ 10**: Functions remain testable and maintainable
+- **80% 代码覆盖率**：能捕获大部分 bug，同时避免边际效益递减
+- **80% 文档覆盖率**：确保公共 API 有文档
+- **复杂度 ≤ 10**：保持函数可测试和可维护
 
-## Troubleshooting
+## 故障排查
 
-### Pre-commit Hook Failures
+### Pre-commit Hook 失败
 
 ```bash
-# See what failed
+# 查看失败原因
 git commit -m "message"
 
-# Fix issues
-make format        # Auto-fix formatting
-make lint-fix      # Auto-fix linting
+# 修复问题
+make format        # 自动修复格式问题
+make lint-fix      # 自动修复 lint 问题
 
-# Try again
+# 重新提交
 git commit -m "message"
 ```
 
-### Type Check Errors
+### 类型检查错误
 
 ```bash
-# Run type check
+# 运行类型检查
 make type-check
 
-# Common fix: Add type hints
+# 常见修复：添加类型注解
 def my_function(x: int) -> str:
     return str(x)
 ```
 
-### Test Failures
+### 测试失败
 
 ```bash
-# Run specific test
+# 运行特定测试
 pytest tests/unit/test_calculator.py::test_add
 
-# See detailed output
+# 查看详细输出
 pytest -vv
 
-# Debug with print statements
+# 使用 print 调试
 pytest -s
 ```
 
-## Contributing
+## 贡献指南
 
-1. Create feature branch: `git checkout -b feature-name`
-2. Make changes and commit (hooks will run)
-3. Push and create PR
-4. CI must pass before merge
+1. 创建功能分支：`git checkout -b feature-name`
+2. 修改代码并提交（hooks 会自动运行）
+3. 推送并创建 PR
+4. CI 必须通过才能合并
 
-## License
+详见 [CONTRIBUTING.md](CONTRIBUTING.md)
 
-This template is released under the MIT License. Use it freely!
+## 许可证
+
+本模板使用 MIT 许可证发布，可自由使用！
 
 ---
 
-**Built with quality in mind. Ship code with confidence.**
+**以质量为本，自信交付代码。**
