@@ -1,0 +1,156 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-template"
+version = "0.1.0"
+description = "A highly engineered Python project template with strict quality controls"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.1.0",           # Fast linter & formatter (replaces Black/Flake8/isort)
+    "mypy>=1.7.0",           # Type checking
+    "pytest>=7.4.0",         # Testing framework
+    "pytest-cov>=4.1.0",     # Coverage plugin for pytest
+    "interrogate>=1.5.0",    # Docstring coverage
+    "radon>=6.0.1",          # Code complexity analysis
+    "pre-commit>=3.5.0",     # Git hooks framework
+    "gitlint>=0.19.1",       # Commit message linting
+]
+
+# ============================================================================
+# Ruff - The Fast All-in-One Linter (replaces Black, Flake8, isort)
+# ============================================================================
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "I",      # isort (import sorting)
+    "N",      # pep8-naming
+    "UP",     # pyupgrade
+    "B",      # flake8-bugbear
+    "C4",     # flake8-comprehensions
+    "SIM",    # flake8-simplify
+    "TCH",    # flake8-type-checking
+    "Q",      # flake8-quotes
+    "RET",    # flake8-return
+    "PTH",    # flake8-use-pathlib
+    "PL",     # pylint
+]
+ignore = [
+    "E501",   # Line too long (handled by formatter)
+    "PLR0913", # Too many arguments - sometimes necessary
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+    "PLR2004",  # Magic value comparison - OK in tests
+    "S101",     # Use of assert - required in tests
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# ============================================================================
+# Mypy - Type Checking
+# ============================================================================
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+
+# ============================================================================
+# Pytest - Testing Framework
+# ============================================================================
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-ra",                    # Show summary of all test outcomes
+    "--strict-markers",       # Raise error on unknown markers
+    "--strict-config",        # Raise error on config issues
+    "--cov=src",              # Measure coverage for src/
+    "--cov-report=term-missing:skip-covered",  # Show missing lines
+    "--cov-report=html",      # Generate HTML report
+    "--cov-report=xml",       # Generate XML for CI
+    "--cov-fail-under=80",    # Fail if coverage below 80%
+]
+
+# ============================================================================
+# Coverage - Code Coverage Configuration
+# ============================================================================
+[tool.coverage.run]
+source = ["src"]
+branch = true
+omit = [
+    "*/tests/*",
+    "*/__init__.py",
+]
+
+[tool.coverage.report]
+precision = 2
+show_missing = true
+skip_covered = false
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
+
+# ============================================================================
+# Interrogate - Docstring Coverage
+# ============================================================================
+[tool.interrogate]
+ignore-init-method = true
+ignore-init-module = true
+ignore-magic = true
+ignore-semiprivate = true
+ignore-private = true
+ignore-property-decorators = true
+ignore-module = true
+ignore-nested-functions = true
+fail-under = 80              # Require 80% docstring coverage
+exclude = ["tests", "docs", ".venv"]
+verbose = 2
+color = true

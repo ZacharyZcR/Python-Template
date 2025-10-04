@@ -1,0 +1,21 @@
+# Gitlint configuration
+# https://jorisroovers.com/gitlint/
+
+[general]
+# 忽略某些 commit (如 merge commits)
+ignore=body-is-missing
+
+# 启用的规则
+contrib=contrib-title-conventional-commits
+
+[title-max-length]
+line-length=72
+
+[body-max-line-length]
+line-length=100
+
+[contrib-title-conventional-commits]
+# Conventional Commits 规范
+# 格式: <type>(<scope>): <subject>
+# type 必须是以下之一:
+types=feat,fix,docs,style,refactor,perf,test,build,ci,chore,revert

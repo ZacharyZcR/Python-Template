@@ -1,0 +1,72 @@
+name: Bug 报告
+description: 报告一个 bug 帮助我们改进
+title: "[Bug]: "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你花时间填写这个 bug 报告！
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug 描述
+      description: 清晰简洁地描述这个 bug
+      placeholder: 发生了什么问题？
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现步骤
+      description: 如何复现这个问题？
+      placeholder: |
+        1. 执行 '...'
+        2. 观察 '...'
+        3. 发生错误
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为
+      description: 你期望发生什么？
+      placeholder: 应该发生什么？
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为
+      description: 实际发生了什么？
+      placeholder: 实际发生了什么？
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境信息
+      description: 你的环境信息
+      value: |
+        - Python 版本: [例如 3.11]
+        - 操作系统: [例如 Ubuntu 22.04]
+        - 项目版本: [例如 1.0.0]
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 相关日志
+      description: 如果有的话，粘贴相关的错误日志
+      render: shell
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 补充信息
+      description: 其他任何相关信息
