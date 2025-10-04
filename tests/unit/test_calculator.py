@@ -1,7 +1,6 @@
 """Calculator 类的单元测试。"""
 
 import pytest
-
 from src.core.calculator import Calculator
 
 

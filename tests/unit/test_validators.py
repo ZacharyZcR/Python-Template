@@ -1,7 +1,6 @@
 """验证工具的单元测试。"""
 
 import pytest
-
 from src.utils.validators import is_not_empty, is_positive, is_valid_email
 
 
